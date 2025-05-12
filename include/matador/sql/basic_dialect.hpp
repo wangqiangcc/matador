@@ -31,7 +31,7 @@ struct build_info
   build_info(const sql &s, basic_dialect *d);
 
   build_info(const build_info&) = default;
-  build_info(build_info&&) noexcept = default;
+  build_info(build_info&&) = default;
   build_info& operator=(const build_info&) = default;
   build_info& operator=(build_info&&) = default;
 
