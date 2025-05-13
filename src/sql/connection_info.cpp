@@ -5,8 +5,8 @@
 namespace matador {
 
 connection_info connection_info::parse(const std::string &info, unsigned short default_port, const std::string &default_driver) {
-  static const std::regex DNS_RGX (R"((\w+):\/\/((([\w]+)(:([\w!]+))?)@)?((((([\w.\(\)\\]+)([:]([\d]+))?)?)\/)?(([\w.]+)( \((.*)\))?)))");
-
+  //static const std::regex DNS_RGX (R"((\w+):\/\/((([\w]+)(:([\w!]+))?)@)?((((([\w.\(\)\\]+)([:]([\d]+))?)?)\/)?(([\w.]+)( \((.*)\))?)))");
+  static const std::regex DNS_RGX(R"((\w+):\/\/((([\w]+)(:([^@]+))?)@)?((((([\w.\(\)\\]+)(:(\d+))?)?)\/)?(([^ \(\)]+)( \((.*)\))?)))");
   std::smatch what;
 
   if (!std::regex_match(info, what, DNS_RGX)) {
